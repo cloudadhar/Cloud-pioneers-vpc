@@ -43,14 +43,3 @@ Create the two-AZ network foundation that Part 2 will use to host a public web t
 - Internet Gateway attachment
 - Explanation of what makes a subnet public or private
 
-## Validation Questions
-
-- Are all four `/24` ranges inside `10.0.0.0/16` and non-overlapping?
-- Do only the public subnets receive the IGW default route?
-- Are public IPv4 settings aligned with actual routing?
-- Before step 5, were the "public" subnets actually public? Why not?
-- Can you identify the route that wins for internal VPC traffic and explain longest-prefix match?
-
-## Carry Forward
-
-Keep the VPC for the Part 2 challenge. If you stop here, complete [06-cleanup.md](./06-cleanup.md).
