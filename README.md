@@ -35,7 +35,6 @@ Region: Asia Pacific (Mumbai) `ap-south-1`. Resource IDs, AMI IDs, account IDs, 
 | Security Groups | `web-sg`, `app-sg` |
 | EC2 instances | `web-server-public`, `app-server-private` |
 | User data (both instances) | [`scripts/user-data-demo.sh`](./scripts/user-data-demo.sh) - Cloud Pioneers VPC Demo page |
-| User data (alternative) | [`scripts/user-data-web.sh`](./scripts/user-data-web.sh), [`scripts/user-data-private.sh`](./scripts/user-data-private.sh) |
 
 ## Required Outcomes
 
