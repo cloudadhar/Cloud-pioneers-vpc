@@ -140,9 +140,8 @@ Same as Step 8, with these changes:
 |---|---|
 | Name | `web-server-public` |
 | Subnet | `public-subnet-a` |
-| Create Security Group | `pioneers-vpc-sg` |
 | Auto-assign public IP | **Enable** |
-| Firewall | `web-sg` |
+| Security Group | `web-sg` |
 | User data | the same script |
 
 <details>
