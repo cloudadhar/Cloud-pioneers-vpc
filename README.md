@@ -129,35 +129,21 @@ Do **not** do this for the private subnets.
 
 Check: open `cloud-pioneers-vpc` -> **Resource map** tab.
 
-## Step 7 - Create Security Groups
-
-**Security groups** -> **Create security group** (VPC: `cloud-pioneers-vpc`)
-
-| Security group | Type | Port | Source |
-|---|---|---|---|
-| `web-sg` | HTTP | 80 | `0.0.0.0/0` (Anywhere-IPv4) |
-| `web-sg` | SSH | 22 | Prefix list `com.amazonaws.ap-south-1.ec2-instance-connect` |
-| `app-sg` | Custom TCP | 8080 | `web-sg` (select the security group) |
 
 Leave outbound rules as default. `app-sg` trusts `web-sg`, not an IP address - only the web server can reach the app server.
 
-## Step 8 - Launch EC2 in the Private Subnet
+## Step 7 - Launch EC2 in the Public Subnet
 
-**EC2** -> **Launch instances**
+Same as Step 8, with these changes:
 
 | Setting | Value |
 |---|---|
-| Name | `app-server-private` |
-| AMI | Amazon Linux 2023 |
-| Instance type | `t2.micro` or `t3.micro` (Free Tier eligible) |
-| Key pair | Proceed without a key pair |
-| Network settings -> **Edit** -> VPC | `cloud-pioneers-vpc` |
-| Subnet | `private-subnet-a` |
-| Auto-assign public IP | **Disable** |
-| Firewall | Select existing security group -> `app-sg` |
-| Advanced details -> User data | paste the script below |
-
-**Launch instance** -> note its **Private IPv4 address**.
+| Name | `web-server-public` |
+| Subnet | `public-subnet-a` |
+| Create Security Group | `pioneers-vpc-sg` |
+| Auto-assign public IP | **Enable** |
+| Firewall | `web-sg` |
+| User data | the same script |
 
 <details>
 <summary><b>User data script (click to expand)</b> - same script for both instances, also in <a href="./scripts/user-data-demo.sh">scripts/user-data-demo.sh</a></summary>
@@ -278,19 +264,26 @@ fi
 
 </details>
 
-## Step 9 - Launch EC2 in the Public Subnet
 
-Same as Step 8, with these changes:
+**Launch instance** -> wait 1-2 minutes after **Running** -> copy its **Public IPv4 address**.
+
+## Step 8 - Launch EC2 in the Private Subnet
+
+**EC2** -> **Launch instances**
 
 | Setting | Value |
 |---|---|
-| Name | `web-server-public` |
-| Subnet | `public-subnet-a` |
-| Auto-assign public IP | **Enable** |
-| Firewall | `web-sg` |
-| User data | the same script |
+| Name | `app-server-private` |
+| AMI | Amazon Linux 2023 |
+| Instance type | `t2.micro` or `t3.micro` (Free Tier eligible) |
+| Key pair | Proceed without a key pair |
+| Network settings -> **Edit** -> VPC | `cloud-pioneers-vpc` |
+| Subnet | `private-subnet-a` |
+| Auto-assign public IP | **Disable** |
+| Firewall | Select existing security group -> `app-sg` |
+| Advanced details -> User data | paste the script below |
 
-**Launch instance** -> wait 1-2 minutes after **Running** -> copy its **Public IPv4 address**.
+**Launch instance** -> note its **Private IPv4 address**.
 
 ## Step 10 - Test: Public vs Private
 
