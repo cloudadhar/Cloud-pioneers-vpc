@@ -44,8 +44,6 @@ Region: Asia Pacific (Mumbai) `ap-south-1`. Resource IDs, AMI IDs, account IDs, 
 - EC2, EBS, and public IPv4 can create charges; use only Free Tier eligible `t2.micro` or `t3.micro` and terminate after the session.
 - NAT Gateway and Elastic IP are not free. The NAT Gateway is a trainer demo only; learners do not create it.
 - Do not open SSH to `0.0.0.0/0`. Use EC2 Instance Connect with the AWS-managed Instance Connect prefix list as the only SSH source.
-- Do not create key pairs for this workshop.
-- Create a Zero spend budget before starting if your account does not have one.
 - Never publish credentials, account IDs, billing details, or unredacted sensitive output in screenshots or posts.
 
 <div align="center">
