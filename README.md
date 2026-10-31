@@ -1,16 +1,9 @@
 # Cloud Pioneers - Design a Real-World VPC and Deploy an Application on EC2
 
 AWS Hands-On Builders Workshop - AWS Student Builder Group x CloudAdhar<br>
-Venue: Ajeenkya DY Patil School of Engineering, Lohegaon, Pune (session at Data Axel, SB Road, Pune)<br>
-Session: Oct 31, 2026 - 9:00 AM to 1:00 PM<br>
-Trainer: Gangadhar Ure - DevSecOps Lead, AWS Solutions Architect, Founder CloudAdhar<br>
-Main pillars: Security, Reliability, and Cost Optimization
-
 This workshop builds and validates a production-style two-tier network on AWS. Learners design a two-AZ VPC, prove what makes a subnet public or private, deploy a web application on EC2 in a public subnet, and reach an application server in a private subnet that the internet cannot reach directly.
 
-The repository provides challenge outcomes and evidence requirements. The trainer builds every step live; follow along and use these files as your reference.
 
-![Cloud Pioneers architecture](./assets/architecture.png)
 
 ## Start Here
 
