@@ -285,7 +285,7 @@ fi
 
 **Launch instance** -> note its **Private IPv4 address**.
 
-## Step 10 - Test: Public vs Private
+## Step 9 - Test: Public vs Private
 
 | Test | Open in your browser | Result |
 |---|---|---|
@@ -297,16 +297,8 @@ fi
 
 On the private page, **Outbound internet: Allowed** - that is the NAT Gateway. The private server can reach out, but the internet still cannot reach in (test 2).
 
-## Step 11 - Break It and Fix It
 
-| Change | What happens | Why |
-|---|---|---|
-| Remove the 8080 rule from `app-sg` | Test 3 shows `504 Gateway Time-out` | Security Group blocks web -> app |
-| Associate `public-subnet-a` with `private-rt` | Test 1 stops loading | No route to the IGW = no longer public |
-
-Put both back and everything works again.
-
-## Step 12 - Cleanup
+## Step 10 - Cleanup
 
 Delete in this order:
 
