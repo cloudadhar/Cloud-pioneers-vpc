@@ -34,18 +34,9 @@ Region: Asia Pacific (Mumbai) `ap-south-1`. Resource IDs, AMI IDs, account IDs, 
 | Route tables | `public-rt`, `private-rt` |
 | Security Groups | `web-sg`, `app-sg` |
 | EC2 instances | `web-server-public`, `app-server-private` |
-| User data (both instances) | [`scripts/user-data-demo.sh`](./scripts/user-data-demo.sh) - Cloud Pioneers VPC Demo page |
+| User data | [`scripts/user-data-demo.sh`](./scripts/user-data-demo.sh) - Cloud Pioneers VPC Demo page |
 
-## Required Outcomes
 
-- Explain why a subnet name does not make it public, and what does.
-- Explain the Internet -> Internet Gateway -> public route table -> Security Group -> EC2 path.
-- Deploy nginx on EC2 with user data and open the application over HTTP.
-- Prove the app server has no public IPv4 and is reachable only from the web tier.
-- Use a Security Group reference (`web-sg` -> `app-sg`) instead of an IP-based rule.
-- Prove one controlled Security Group rejection and its recovery.
-- Explain why a NAT Gateway is needed for private outbound internet, and what it costs.
-- Delete every workshop resource and confirm nothing billable remains.
 
 ## Cost and Safety Rules
 
