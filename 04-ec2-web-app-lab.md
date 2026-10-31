@@ -31,16 +31,6 @@ Use the same user data on both instances: [`scripts/user-data-demo.sh`](./script
 
 5. Optional: from the web server (EC2 Instance Connect), run `curl -m 5 http://<app-private-ip>:8080` to see the same private page from inside the VPC.
 
-![Public subnet page](./assets/demo-public-subnet.png)
-
-<details>
-<summary>Private subnet page (reached through the web server)</summary>
-
-![Private subnet page](./assets/demo-private-subnet.png)
-
-</details>
-
-Alternative: [`user-data-web.sh`](./scripts/user-data-web.sh) and [`user-data-private.sh`](./scripts/user-data-private.sh) are simpler single-purpose scripts. With those, configure the `/private/` reverse proxy by hand from EC2 Instance Connect:
 
 ```bash
 APP_IP=<app-server-private-ip>
